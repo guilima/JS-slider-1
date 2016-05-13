@@ -1,0 +1,60 @@
+/* Reset */
+body {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* Slider */
+.slides li {
+	display: table-cell;
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+}
+
+.slides {
+	display: table;
+	white-space: nowrap;
+	margin: 0;
+	padding: 0;
+}
+
+.slides img {
+	width: 100%;
+}
+
+.flex-control-nav {
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin: auto;
+	max-width: 95px;
+	font-size: 0;
+	padding: 0;
+}
+
+.flex-control-nav li {
+	margin: 0 6px;
+	display: inline-block;
+	zoom: 1;
+}
+
+.flex-control-nav a {
+	width: 11px;
+	height: 11px;
+	display: block;
+	background: #666;
+	background: rgba(82,168,214,0.5);
+	cursor: pointer;
+	text-indent: -9999px;
+	-webkit-box-shadow: inset 0 0 3px rgba(82,168,214,0.3);
+	box-shadow: inset 0px 0px 3px rgba(82,168,214,0.3);
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+}
+
+.flex-control-nav a[style] {
+	cursor: default;
+}
