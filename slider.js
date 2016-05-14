@@ -1,13 +1,14 @@
 var slideItem = document.querySelectorAll(".slides li"),
+		itemLen = slideItem.length,
 		slide = slideItem[0].parentElement,
 		setElem = slide.parentElement,
 		navBtn = document.querySelectorAll(".flex-control-nav a"),
-		btnIndex,
+		currentItem,
 		screenW= setElem.offsetWidth;
 
 function onWindowResize() { 
 	screenW = setElem.offsetWidth;
-	var resizedItem = btnIndex * screenW;
+	var resizedItem = currentItem * screenW;
 	
 	slide.style.transition = '0s';
 	slide.style.transform = "translate3d(-"+resizedItem+"px, 0px, 0px)";
@@ -17,27 +18,27 @@ function onWindowResize() {
 
 
 function setSize() { 
-	for (var i = 0, leni = slideItem; i < leni.length; i++) {
+	for (var i = 0; i < itemLen; i++) {
 		slideItem[i].style.width = screenW + 'px';
 	}
 }
 
 function navMoves() { 
 	navBtn[0].style.background = 'red';
-	for (var x = 0, lenx = navBtn; x < lenx.length; x++) {
+	for (var i = 0; i < itemLen; i++) {
 		(function(index){
-			navBtn[x].addEventListener('click', function(e){
-				for (var j = 0, lenj = navBtn; j < lenj.length; j++) {
+			navBtn[i].addEventListener('click', function(e){
+				currentItem = index,
+				resizedItem = currentItem * screenW;
+				
+				for (var j = 0; j < itemLen; j++) {
 					navBtn[j].removeAttribute('style');
 				}
-				e.target.style.background = 'red';
-				
-				btnIndex = index,
-				btnIndex2 = btnIndex * screenW;
+				e.target.style.background = 'red';				
 				slide.style.transition = '0.25s ease-out';
-				slide.style.transform = "translate3d(-"+btnIndex2+"px, 0px, 0px)";
+				slide.style.transform = "translate3d(-"+resizedItem+"px, 0px, 0px)";
 			});
-		})(x);
+		})(i);
 	}
 }
 
