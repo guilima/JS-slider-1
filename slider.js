@@ -3,7 +3,7 @@ var slideItem = document.querySelectorAll(".slides li"),
 		slide = slideItem[0].parentElement,
 		setElem = slide.parentElement,
 		navBtn = document.querySelectorAll(".flex-control-nav a"),
-		currentItem,
+		currentItem = 0,
 		screenW= setElem.offsetWidth;
 
 function onWindowResize() { 
