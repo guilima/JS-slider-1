@@ -16,7 +16,6 @@ function onWindowResize() {
 	setSize();
 }
 
-
 function setSize() { 
 	for (var i = 0; i < itemLen; i++) {
 		slideItem[i].style.width = screenW + 'px';
@@ -30,7 +29,6 @@ function navMoves() {
 			navBtn[i].addEventListener('click', function(e){
 				currentItem = index,
 				resizedItem = currentItem * screenW;
-				
 				for (var j = 0; j < itemLen; j++) {
 					navBtn[j].removeAttribute('style');
 				}
@@ -42,11 +40,6 @@ function navMoves() {
 	}
 }
 
-
 navMoves();
 setSize();
 window.addEventListener( 'resize',onWindowResize, false);
-
-
-
-	
