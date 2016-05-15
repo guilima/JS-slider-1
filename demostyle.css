@@ -6,25 +6,26 @@ body {
 
 
 /* Slider */
-.slides li {
-	display: table-cell;
-	display: inline-block;
-	text-align: center;
-	vertical-align: top;
-}
-
 .slides {
-	display: table;
+	display: inline-block;
 	white-space: nowrap;
 	margin: 0;
 	padding: 0;
+	font-size: 0;
+	vertical-align: top;
+}
+
+.slides li {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
 }
 
 .slides img {
 	width: 100%;
 }
 
-.flex-control-nav {
+.slides-control-nav {
 	position: absolute;
 	right: 0;
 	left: 0;
@@ -34,13 +35,13 @@ body {
 	padding: 0;
 }
 
-.flex-control-nav li {
+.slides-control-nav li {
 	margin: 0 6px;
 	display: inline-block;
 	zoom: 1;
 }
 
-.flex-control-nav a {
+.slides-control-nav a {
 	width: 11px;
 	height: 11px;
 	display: block;
@@ -55,6 +56,6 @@ body {
 	border-radius: 20px;
 }
 
-.flex-control-nav a[style] {
+.slides-control-nav a[style] {
 	cursor: default;
 }
