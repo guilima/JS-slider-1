@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="demostyle.css">
 </head>
 <body>
-	<div class="slideshow flexslider slide-gallery">
+	<div class="carousel">
 		<div class="flex-viewport" style="overflow: hidden; position: relative; height: 467px;">
 			<ul class="slides">
 				<li><img src="http://fakeimg.pl/640x320/?text=Hello" alt="20160505_112506" draggable="false">
@@ -19,12 +19,14 @@
 				</li>
 				<li><img src="http://fakeimg.pl/640x320/?text=Problem?" alt="DSC06771" draggable="false">
 				</li>
+				<li class="clone" aria-hidden="true"><img src="http://fakeimg.pl/640x320/?text=Hello" alt="20160505_112506" draggable="false">
+				</li>
 			</ul>
 		</div>
 	</div>
 	<div>
-		<ol class="flex-control-nav">
-			<li class="flex-active"><a>0</a></li>
+		<ol class="slides-control-nav">
+			<li><a>0</a></li>
 			<li><a>1</a></li>
 			<li><a>2</a></li>
 			<li><a>3</a></li>
