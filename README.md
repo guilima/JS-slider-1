@@ -4,4 +4,7 @@
 
 This project is a smaller version of flexslider html structure, but with optimized style and vanilla js (be cool i am learning).
 
-For now it's necessary to implement an autoplay slider function.
+For now it's necessary:
++ Refactorate the code;
++ Implement mobile touch slide;
++ On hover pause autoplay.
