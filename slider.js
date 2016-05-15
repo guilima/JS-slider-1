@@ -28,6 +28,7 @@ function navMoves() {
 	for (var i = 0; i < itemLen; i++) {
 		(function(index){
 			navBtn[i].addEventListener('click', function(e){
+				window.clearInterval(intervalID);
 				currentItem = index,
 				resizedItem = currentItem * screenW;
 				for (var j = 0; j < itemLen; j++) {
