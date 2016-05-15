@@ -18,7 +18,7 @@ function onWindowResize() {
 
 function setSize() { 
 	slideItem = document.querySelectorAll(".slides li");
-	for (var i = 0; i < itemLen; i++) {
+	for (var i = 0; i < itemLen+1; i++) {
 		slideItem[i].style.width = screenW + 'px';
 	}
 }
