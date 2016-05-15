@@ -4,6 +4,11 @@ body {
 	padding: 0;
 }
 
+.carousel {
+	margin: auto;
+	max-width: 906px;
+	width: 100%;
+}
 
 /* Slider */
 .slides {
