@@ -1,4 +1,4 @@
-var slideItem = document.querySelectorAll(".slides li:not(.clone)"),
+var slideItem = document.querySelectorAll(".slide"),
 	itemLen = slideItem.length,
 	slide = slideItem[0].parentElement,
 	setElem = slide.parentElement,
