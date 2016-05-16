@@ -27,7 +27,7 @@ function navMoves() {
 	navBtn[0].style.background = 'red';
 	for (var i = 0; i < itemLen; i++) {
 		(function(index){
-			navBtn[i].addEventListener('click', function(e){
+			navBtn[i].attachEvent('onclick', function(e){
 				var target = e.target || e.srcElement;
 				window.clearInterval(intervalID);
 				currentItem = index,
@@ -69,6 +69,6 @@ function transitionEnd(e) {
 
 navMoves();
 setSize();
-window.addEventListener( 'resize',onWindowResize, false);
+window.attachEvent( 'onresize',onWindowResize);
 var intervalID = window.setInterval(autoPlay, 5500);
-slide.addEventListener("transitionend", transitionEnd, false);
+//slide.addEventListener("transitionend", transitionEnd, false);
