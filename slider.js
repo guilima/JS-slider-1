@@ -57,6 +57,7 @@ function autoPlay() {
 	}
 	slide.style.transition = '0.35s ease-out';
 	slide.style.marginLeft = "-"+resizedItem;
+	alert(resizedItem);
 }
 
 function transitionEnd(e) {
