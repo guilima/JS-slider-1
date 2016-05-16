@@ -28,13 +28,14 @@ function navMoves() {
 	for (var i = 0; i < itemLen; i++) {
 		(function(index){
 			navBtn[i].addEventListener('click', function(e){
+				var target = e.target || e.srcElement;
 				window.clearInterval(intervalID);
 				currentItem = index,
 				resizedItem = currentItem * screenW;		
 				for (var j = 0; j < itemLen; j++) {
 					navBtn[j].style.background = '';
 				}
-				e.target.style.background = 'red';				
+				target.style.background = 'red';				
 				slide.style.transition = '0.35s ease-out';
 				slide.style.transform = "translate3d(-"+resizedItem+"px, 0px, 0px)";
 			});
