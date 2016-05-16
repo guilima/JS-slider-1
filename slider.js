@@ -1,4 +1,4 @@
-var slideItem = document.querySelectorAll(".slide"),
+var slideItem = document.querySelectorAll(".slides li:not(.clone)"),
 	itemLen = slideItem.length,
 	slide = slideItem[0].parentElement,
 	setElem = slide.parentElement,
@@ -11,7 +11,7 @@ function onWindowResize() {
 	var resizedItem = currentItem * screenW;
 	
 	slide.style.transition = '0s';
-	slide.style.marginLeft = "-"+resizedItem;
+	slide.style.transform = "translate3d(-"+resizedItem+"px, 0px, 0px)";
 	
 	setSize();
 }
@@ -27,17 +27,16 @@ function navMoves() {
 	navBtn[0].style.background = 'red';
 	for (var i = 0; i < itemLen; i++) {
 		(function(index){
-			navBtn[i].attachEvent('onclick', function(e){
-				var target = e.target || e.srcElement;
+			navBtn[i].addEventListener('click', function(e){
 				window.clearInterval(intervalID);
 				currentItem = index,
 				resizedItem = currentItem * screenW;		
 				for (var j = 0; j < itemLen; j++) {
 					navBtn[j].style.background = '';
 				}
-				target.style.background = 'grey';				
+				e.target.style.background = 'red';				
 				slide.style.transition = '0.35s ease-out';
-				slide.style.marginLeft = "-"+resizedItem;
+				slide.style.transform = "translate3d(-"+resizedItem+"px, 0px, 0px)";
 			});
 		})(i);
 	}
@@ -48,7 +47,7 @@ function autoPlay() {
 	resizedItem = currentItem * screenW;
 	
 	for (var i = 0; i < itemLen; i++) {
-		navBtn[i].style.background = 'grey';		
+		navBtn[i].style.background = '';		
 	}	
 	if (currentItem == itemLen) {
 		navBtn[0].style.background = 'red';
@@ -56,7 +55,7 @@ function autoPlay() {
 		navBtn[currentItem].style.background = 'red';
 	}
 	slide.style.transition = '0.35s ease-out';
-	slide.style.marginLeft = "-"+resizedItem;
+	slide.style.transform = "translate3d(-"+resizedItem+"px, 0px, 0px)";
 }
 
 function transitionEnd(e) {
@@ -69,6 +68,6 @@ function transitionEnd(e) {
 
 navMoves();
 setSize();
-window.attachEvent( 'onresize',onWindowResize);
+window.addEventListener( 'resize',onWindowResize, false);
 var intervalID = window.setInterval(autoPlay, 5500);
-//slide.addEventListener("transitionend", transitionEnd, false);
+slide.addEventListener("transitionend", transitionEnd, false);
