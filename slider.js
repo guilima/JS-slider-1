@@ -35,7 +35,7 @@ function navMoves() {
 				for (var j = 0; j < itemLen; j++) {
 					navBtn[j].style.background = '';
 				}
-				target.style.background = 'red';				
+				target.style.background = 'grey';				
 				slide.style.transition = '0.35s ease-out';
 				slide.style.marginLeft = "-"+resizedItem;
 			});
@@ -48,7 +48,7 @@ function autoPlay() {
 	resizedItem = currentItem * screenW;
 	
 	for (var i = 0; i < itemLen; i++) {
-		navBtn[i].style.background = '';		
+		navBtn[i].style.background = 'grey';		
 	}	
 	if (currentItem == itemLen) {
 		navBtn[0].style.background = 'red';
@@ -57,7 +57,6 @@ function autoPlay() {
 	}
 	slide.style.transition = '0.35s ease-out';
 	slide.style.marginLeft = "-"+resizedItem;
-	alert(resizedItem);
 }
 
 function transitionEnd(e) {
