@@ -11,7 +11,7 @@ function onWindowResize() {
 	var resizedItem = currentItem * screenW;
 	
 	slide.style.transition = '0s';
-	slide.style.transform = "translate3d(-"+resizedItem+"px, 0px, 0px)";
+	slide.style.marginLeft = "-"+resizedItem;
 	
 	setSize();
 }
@@ -37,7 +37,7 @@ function navMoves() {
 				}
 				target.style.background = 'red';				
 				slide.style.transition = '0.35s ease-out';
-				slide.style.transform = "translate3d(-"+resizedItem+"px, 0px, 0px)";
+				slide.style.marginLeft = "-"+resizedItem;
 			});
 		})(i);
 	}
@@ -56,7 +56,7 @@ function autoPlay() {
 		navBtn[currentItem].style.background = 'red';
 	}
 	slide.style.transition = '0.35s ease-out';
-	slide.style.transform = "translate3d(-"+resizedItem+"px, 0px, 0px)";
+	slide.style.marginLeft = "-"+resizedItem;
 }
 
 function transitionEnd(e) {
